@@ -16,13 +16,17 @@
 <meta name="apple-mobile-web-app-title" content="ジャックと生きる木">
 <!-- for Android -->
 <meta name="theme-color" content="#007808">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 if(window.navigator.standalone){
  alert("ホーム画面からの起動です！")
 }else{
  alert("ホーム画面に追加してください！")
 }
-
+	
+$.getJSON(url, (data) => {
+ // JSONデータを受信した後に実行する処理
+}
 </script>
 </head>
 	 
@@ -91,6 +95,6 @@ function clickBtn1(){
 
 }
 </script>
-v0.9.2
+v0.9.3
 </body>
 </html>
