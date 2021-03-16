@@ -24,15 +24,16 @@ if(window.navigator.standalone){
  alert("ホーム画面に追加してください！")
 }
 	
-function alr(){
-	var chara = data.chara
-	var mes = data.mes
-	alert(chara + "：" + mes)
-}
+
+	
+	
+
 </script>
 <script>
 $.getJSON("test.json", (data) => {
-	alr()
+	var chara = data.chara
+	var mes = data.mes
+	alert(chara + "：" + mes)
 }
 </script>
 </head>
@@ -102,6 +103,6 @@ function clickBtn1(){
 
 }
 </script>
-v0.9.4
+v0.9.5
 </body>
 </html>
