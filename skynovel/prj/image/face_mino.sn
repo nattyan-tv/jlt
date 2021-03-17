@@ -1,0 +1,18 @@
+; *******************************************************
+; 蓑浦
+; *******************************************************
+[add_face name="mino_hoho" dx=159 dy=177 blendmode="multiply"]
+[add_face name="mino_ase" dx=277 dy=216 blendmode="multiply"]
+[add_face name="mino_mayu_ikari" dx=169 dy=144 blendmode="multiply"]
+[add_face name="mino_mayu_urei" dx=167 dy=144 blendmode="multiply"]
+[add_face name="mino_mayu_nor" dx=167 dy=146 blendmode="multiply"]
+[add_face name="mino_me_hanbiraki" dx=171 dy=162]
+[add_face name="mino_me_toji" dx=170 dy=162]
+[add_face name="mino_me_nor" dx=171 dy=159]
+[add_face name="mino_kuchi_hohoemi" dx=198 dy=241 blendmode="multiply"]
+[add_face name="mino_kuchi_hiraki" dx=201 dy=237 blendmode="multiply"]
+[add_face name="mino_kuchi_nor" dx=200 dy=239 blendmode="multiply"]
+
+; *******************************************************
+
+[return]
