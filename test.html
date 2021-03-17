@@ -10,49 +10,77 @@
 <!-- for iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black_translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=200">
 <link rel="apple-touch-icon" href="180x180.png" sizes="180x180">
 <link rel="apple-touch-startup-image" href="splash.png">
 <meta name="apple-mobile-web-app-title" content="ジャックと生きる木">
 <!-- for Android -->
 <meta name="theme-color" content="#007808">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-if(window.navigator.standalone){
- alert("ホーム画面からの起動です！")
-}else{
- alert("ホーム画面に追加してください！")
-}
-	
-
-	
-	
-
-</script>
-<script>
-$.getJSON("test.json", (data) => {
-	var chara = data.chara
-	var mes = data.mes
-	alert(chara + "：" + mes)
-}
-</script>
 </head>
-	 
-	 <!-- This website for iOS -->
-	 
-<body>
+<body link="4040ff">
+<center>
+<h4>ジャックと生きる木</h4>
+</center>
+<form name="mes">
+<left>
+<span id="chara">キャラクター名</span>
+</left>
+<center>
+<textarea name="message" readonly cols="25" rows="5">メッセージ本文</textarea></br>
+<span id="botan"><button type=button onclick='next()'>物語スタート</button></span>
+</center>
+</form>
+<hr>
+<center><b>--設定--</b></center>
 <form name="test">
 <div class="toggle_switch">
-    <input type="checkbox" name="xxx" id="cb_toggle_switch">
+    <font size=-1>・ダークモード(β)</font>
+    <input type="checkbox" name="xxx" onchange="ca()" id="cb_toggle_switch">
     <label for="cb_toggle_switch"></label>
 </div>
 </form>
+<hr>
+<h6>v0.9.1 - <a href="javascript:location.href = 'update.html'">アップデート情報</a></h6>
+<script>
+function clickBtn1(){
+	const xxx = document.test.xxx;
 
+	if(xxx.checked){
+	document.getElementById("span2").textContent = "true";
+	}else{
+	document.getElementById("span2").textContent = "false";
+	}
+}
 
+function ca(){
+	const xxx = document.test.xxx;
+
+	if(xxx.checked){
+	document.body.style.backgroundColor = '#000';
+	document.body.style.color = '#fff';
+	}else{
+	document.body.style.backgroundColor = '#fff';
+	document.body.style.color = '#000';
+	}
+}
+</script>
 <style>
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+body {
+    background-color: #fff; /* 背景色 */
+    color: #000;
+}
+
+
 .toggle_switch {
     display: table;
-    font-size: 60px;
+    font-size: 20px;
 }
 
 .toggle_switch > input {
@@ -86,26 +114,6 @@ $.getJSON("test.json", (data) => {
     left: calc(100% - 1em + 0.05em);
 }
 </style>
-	<a href="javascript:clickBtn1()">真偽値</a></br>
-	 <span id="span2"></span></br></br>
-<a href="javascript:location.reload(true)">再読み込み</a></br>
-<h3><a href="javascript:location.replace('help.html')">使い方</a></h3>
-<h3><a href="javascript:location.replace('test.html')">Novel-DEV</a></h3>
-<h3><a href="javascript:location.replace('renpy/index.html')">Ren'py</a></h3>
-<h3><a href="javascript:location.replace('skynovel/web.htm')">SKYNovel</a></h3>
-<script>
-function clickBtn1(){
-	const xxx = document.test.xxx;
-
-	if(xxx.checked){
-	document.getElementById("span2").textContent = "true";
-	}else{
-	document.getElementById("span2").textContent = "false";
-	}
-
-
-}
-</script>
-v0.9.5
+<script type="text/javascript" src="jack_test.js"></script>
 </body>
 </html>
