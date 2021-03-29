@@ -1,0 +1,37 @@
+$(function(){
+    //トップスクロール
+    var windowRoll = $(window),
+        topBtn = $('#page_top'),
+        showFlug = false,
+        changeBottom = $('body').height() - windowRoll.height() - 190;
+
+    topBtn.css('top', '-100px');
+    //スクロールが100に達したらボタン表示
+    windowRoll.scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            if (showFlug == false) {
+                showFlug = true;
+                topBtn.stop().animate({'top' : '-50px'}, 500); }
+        } else {
+            if (showFlug) {
+                showFlug = false;
+                topBtn.stop().animate({'top' : '-100px'}, 500); }
+        }
+    });
+});
+
+$(function() {
+    $('a[href*=#]').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') &&　location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length && target;
+            if (target.length) {
+                var sclpos = 0;
+                var scldurat = 1000;
+                var targetOffset = target.offset().top - sclpos;
+                $('html,body')
+                .animate({scrollTop: targetOffset}, {duration: scldurat, easing: "easeOutExpo"});
+            }
+        }
+    });
+});

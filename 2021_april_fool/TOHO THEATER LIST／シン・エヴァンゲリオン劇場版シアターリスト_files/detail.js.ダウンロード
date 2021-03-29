@@ -1,0 +1,149 @@
+$(function(){
+        $(".prefectures section div").click(function() {
+                $(this).next("ul").slideToggle();
+                $(this).closest("div").toggleClass('line');
+                $(this).closest("div").toggleClass('cross');
+                });
+        });
+
+$(function(){
+        $(".prefectures section div").click(function() {
+                $(this).next("table").slideToggle();
+                $(this).next("table").css('display', 'block');
+                });
+        });
+
+$(function(){
+        $(".prefectures ul li p").click(function() {
+                $(this).next("table").slideToggle();
+                $(this).next("table").css('display', 'block');
+                $(this).closest("p").toggleClass('line');
+                $(this).closest("p").toggleClass('cross');
+                });
+        });
+
+$(function(){
+        $(".detail_info .barrierfree div span").click(function() {
+                $(this).next("ul").slideToggle();
+                $(this).closest("span").toggleClass('line');
+                $(this).closest("span").toggleClass('cross');
+                });
+        });
+
+$(function(){
+        $(".detail_info .about p.story").click(function() {
+                $(this).next("span").slideToggle();
+                $(this).next("span").css('display', 'block');
+                $(this).closest("p").toggleClass('line');
+                $(this).closest("p").toggleClass('cross');
+                });
+        });
+
+$(function() {
+        var position = $(".prefectures").offset().top;
+        $(".prefectures .list_header h3").click(function(){
+                $("html,body").animate({
+scrollTop : position
+}, {
+queue : false
+});
+                });
+
+        $(window).on("scroll", function() { 
+            var bottombar = $(".prefectures").offset().top - $(window).height() + $(".prefectures .list_header h3").height();
+
+            if ($(window).scrollTop() > bottombar - 40) {
+            $(".prefectures .list_header h3").css({
+                    "position":"relative",
+                    "border-top": "none",
+                    "background": "none",
+                    "float": "left",
+                    "width": "300px",
+                    "line-height": "25px",
+                    "height": "inherit", 
+                    "color": "#000",    
+                    "text-align": "left",    
+                    });
+            $('.prefectures .list_header').append('<style>h3:before{ content:none !important;}</style>');
+            $('.prefectures .list_header .t_a').text('上映映画館一覧');
+            $('.prefectures .list_header .sp_hide_inline').text('映画館一覧');
+            $('.prefectures .list_header .sp_show_inline').text('映画館一覧');
+            $('.prefectures .list_header').append('<style>h3:hover{ cursor:default !important;}</style>');
+            } else {
+            $(".prefectures .list_header h3").css({
+                    "position":"fixed",
+                    "bottom": "0px",
+                    "margin":"0",
+                    "border-top": "1px #000 solid",
+                    "background": "rgb(52,55,59)",
+                    "float": "none",
+                    "width": "auto",
+                    "left": "0",
+                    "right": "0",
+                    "line-height": "65px",
+                    "height": "65px",
+                    "color": "#fff",    
+                    "text-align": "center",  
+                    });
+            $('.prefectures .list_header').append('<style>h3:before{ content:"" !important;}</style>');
+            $('.prefectures .list_header .t_a').text('▼ 上映映画館一覧 ▼');
+            $('.prefectures .list_header .sp_hide_inline').text('▼ 映画館一覧 ▼');
+            $('.prefectures .list_header .sp_show_inline').text('映画館一覧 ▼');
+            $('.prefectures .list_header').append('<style>h3:hover{ cursor:pointer !important;}</style>');
+            }
+
+            if ($(window).scrollTop() > bottombar + 100){
+                $("#survey").stop().animate({'bottom' : '0px'}, 300);
+            }else{
+                $("#survey").stop().animate({'bottom' : '-65px'}, 300);
+            }
+        });
+
+if (window.matchMedia( '(max-width: 640px)' ).matches) {
+    $(function(){
+            $(".barrierfree h3").click(function() {
+                    $(this).next("ul").slideToggle();
+                    $(".barrierfree h3").toggleClass('line');
+                    $(".barrierfree h3").toggleClass('cross');
+                    });
+            });
+
+    $(window).on("scroll", function() { 
+            var bottombar = $(".prefectures").offset().top - $(window).height() + $(".prefectures .list_header h3").height();
+
+            if ($(window).scrollTop() > bottombar - 40) {
+            $(".prefectures .list_header h3").css({
+                    "position":"relative",
+                    "border-top": "none",
+                    "padding":"4% 3%",
+                    "line-height":"normal",
+                    });
+            $(".prefectures .list_header h3.text_c").css({
+                    "text-align": "left",                  
+                    });
+            $('.prefectures .list_header').append('<style>h3:before{ content:"" !important;}</style>');
+            $('.prefectures .list_header').append('<style>h3:hover{ cursor:default !important;}</style>');
+            } else {
+            $(".prefectures .list_header h3").css({
+                    "position":"fixed",
+                    "bottom": "0px",
+                    "margin":"0",
+                    "padding":"4% 3%",
+                    "border-top": "1px #000 solid",
+                    "height": "inherit",
+                    "text-align": "left",                  
+                    "line-height":"normal",
+                    });
+            $(".prefectures .list_header h3.text_c").css({
+                    "text-align": "center",                  
+                    });
+            }
+
+            if ($(window).scrollTop() > bottombar + 100){
+                $("#survey").stop().animate({'bottom' : '0px'}, 300);
+            }else{
+                $("#survey").stop().animate({'bottom' : '-65px'}, 300);
+            }
+    });
+}
+});
