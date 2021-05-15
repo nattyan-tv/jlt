@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>庭Menu</title>
+<meta name="viewport" content="width=350">
+<script>
+document.write("<center>");
+document.write("<h3>");
+
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var mizu = arr['water'];
+var save = arr['save_water'];
+var hi = arr['day'];
+num = parseInt(hi)
+// 
+// 
+// Code by Qitta:@mocha_xx
+// 
+//
+if(game == 2){
+	document.write("・毎日水をあげに来てね！")
+}else if(game == 1){
+	document.write("・次に水をあげよう！")
+}else{
+	document.write("・まずはお花を植えよう！")
+};
+
+
+if(num == 7){
+document.cookie = 'start_game=3; expires=1-Jun-2030 00:00:00 GMT;';
+location.href = ('end/good_end.html');
+};
+
+
+if(game == 2 && mizu == 1){
+	document.write("</br>お花は水で潤っています。</br>")
+}else if(game == 2 && mizu != 1 && save == 1){
+	document.write("</br>水がなくなりました！お花に水をあげてください！枯れてしまいます！</br>")
+}else if(game == 2 && mizu != 1 && save != 1){
+	document.write("</br>おきのどくですが</br>あなたのおはな１りんは</br>しょうめつしました。</br>")
+	document.cookie = 'start_game=4; expires=1-Jun-2030 00:00:00 GMT;';
+	location.href = ('end/bad_end.html');
+};
+
+document.close();
+</script>
+
+
+</head>
+<body>
+</h3>
+<h1>コマンド</h1>
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var mizu = arr['water'];
+
+if(game != 2 && game != 1){
+	document.write('<form action="/grow_flowers/put_flower.html"><input type="submit" value="[お花を植える]" style="width:330px;height:60px;font-size:30px;"></form>')
+}else if(game == 1){
+	document.write('<form action="/grow_flowers/first_water.html"><input type="submit" value="[お水をあげてみる]" style="width:330px;height:60px;font-size:30px;"></form>')
+}else if(game == 2 && mizu == 1){
+	document.write('<form action="/grow_flowers/niwa_info.html"><input type="submit" value="[お花の状態]" style="width:330px;height:60px;font-size:30px;"></form>')
+}else if(game == 2 && mizu != 1){
+	document.write('<form action="/grow_flowers/put_water.html"><input type="submit" value="[お水をあげる]" style="width:330px;height:60px;font-size:30px;"></form>')
+}else if(game == 4){
+	document.write('<form action="/grow_flowers/bad_end.html"><input type="submit" value="[お花をみる]" style="width:330px;height:60px;font-size:30px;"></form>')
+}else if(game == 3){
+	document.write('<form action="/grow_flowers/good_end.html"><input type="submit" value="[お花をみる]" style="width:330px;height:60px;font-size:30px;"></form>')
+}
+
+</script>
+<hr>
+<form action="/grow_flowers/main.html">
+<input type="submit" value="[前の画面に戻る]" style="width:330px;height:60px;font-size:30px;">
+</form> 
+</center>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GoodEND</title>
+<meta name="viewport" content="width=350">
+<script>
+
+
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var mizu = arr['water'];
+var save = arr['save_water'];
+var hi = arr['day'];
+var name = arr['name']
+num = parseInt(hi)
+// 
+// 
+// Code by Qitta:@mocha_xx
+// 
+
+if (game != 3){alert('致命的なエラーが発生しました。'); location.href=('/grow_flowers/main.html')};
+
+</script>
+
+
+</head>
+<body>
+<center>
+<h1>ゲームクリア!</h1>
+<h3>あなたのお花は無事に開花しました！</h3>
+<hr>
+<script>
+var got = "name.html"
+if (name != 1){
+document.write("<div id='first'>");
+document.write("<h3>お花に名前をつけますか?</h3>");
+document.write('<h2><a href="javascript:location.href=(got)">[YES]</a>/<a href="javascript:skip1()">[NO]</a></h2>');
+document.write("</div>");
+}else{
+skip1();
+};
+
+document.write('<div id="ta"></div>');
+document.write('</br>');
+document.write('<div id="fo"></div>')
+document.close();
+
+elem = document.getElementById("ta");
+ekem = document.getElementById("fo");
+elom = document.getElementById("first");
+
+function skip1(){
+elem.innerHTML = "<h3>あなたは、自分の花をしっかり育てました。これはスゴい事です！</h3><h3>このゲームは何回でもプレイできますので、どんどんお花をしっかり育てて咲かせてください！</h3><h2><a href='javascript:skip2()'>[NEXT]</a></h2>";
+elom.innerHTML = "";
+};
+
+function skip2(){
+elem.innerHTML = "<h1>Thanks for playing!</h1>"
+ekem.innerHTML = "<h4><a href='javascript:skip3()'>[メインメニューに戻る]</a></h4><h3><font color='#ff0000'>※ゲームのデータは初期化されます！</font></h3>"
+};
+
+function skip3(){
+location.href = ('/grow_flowers/exit.html');
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-title" content="はな☆ごっち">
+<meta name="viewport" content="width=250">
+<title>はなごっち</title>
+</head>
+<body>
+<center>
+<h1>はなごっち</br>
+<a href="javascript:location.href = '/grow_flowers/main.html'">[START]</a></h1>
+<h6>Ver:1.0</h6>
+<h5><a href="javascript:location.href=('readme.html')">遊び方</a></h5>
+<noscript><h6>JavaScriptが無効になっているか、対応していません。</br>
+ゲームを正常に進めるには、JavaScriptを有効にしてください。</br></br></h6></noscript>
+<h3>ゲームが正常に動作しない場合は、<a href="javascript:location.href = '/grow_flowers/help.html'">こちら</a></br></br>
+</h3>
+<h4>
+<a href="javascript:location.href = '/grow_flowers/trash.html'">ゲームデータの初期化</a></br>
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var clear = arr['clear_game'];
+if(clear == 1){
+document.write('ゲームのクリアおめでとうございます！')
+};
+</script>
+</br>
+<a href="javascript:location.href = '/index.html'">[AppBASE]</a>
+</h4>
+</body>
+</html>

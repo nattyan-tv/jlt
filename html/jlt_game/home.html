@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-title" content="JLT GAME">
+<meta name="viewport" content="width=250">
+<title>Index</title>
+<meta name="description" content="ジャックと生きる木がゲームなった！？">
+</head>
+<body>
+<a href="javascript:location.href = 'index.html'">＜Return</a>
+<center>
+<noscript>
+
+<h1>ブラウザの設定によってJavaScriptが無効になっています。</h1>
+
+</noscript>
+<font size="+1"><b>【メインメニュー】</b></font></br>
+<font size="-1">ようこそ、<b><span id="nm">[UserNAME]</span></b>さん！</font></br>
+<img src="season_spring.png" width="200" height="200"></br>
+<button style="width: 200px; height: 50px;" onclick="location.href = 'home.html'">戦いに行く</button></br>
+<button style="width: 200px; height: 50px;" onclick="location.href = 'info.html'">育成をする</button></br>
+</center>
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var name = arr['name'];
+
+if(game != 1){
+	location.href = "gen.html"
+}
+
+nm.innerHTML = name
+
+</script>
+</body>
+</html>

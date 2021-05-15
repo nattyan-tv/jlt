@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-title" content="JLT GAME">
+<meta name="viewport" content="width=250">
+<title>ユーザー登録</title>
+<meta name="description" content="ジャックと生きる木がゲームなった！？">
+</head>
+<body>
+<center>
+<h3>ユーザー登録</h3>
+<h6>ゲームを始める前にユーザー名を登録してね！</h6>
+・ユーザー名
+<input type="text" id="name"></input>
+</br><button onclick="generate()">登録</button>
+
+<script>
+function generate(){
+	const input = document.getElementById("name")
+	const name = input.value
+	if(name == ""){
+		alert('名前を入れてね！')
+	}else{
+		f=confirm("名前は「"+name+"」でよろしいですか？\n※現在のバージョンでは名前を変更することはできません。\n今後のアップデートで変更できるようにする予定です。")
+		if(f == true){
+			document.cookie = 'start_game=1; expires=1-Jun-2999 00:00:00 GMT;';
+			document.cookie = 'name='+name+'; expires=1-Jun-2999 00:00:00 GMT;';
+			alert('ようこそ、'+name+'さん！\nこれからの活躍を期待しています！')
+			location.href = 'home.html'
+		}else{
+			console.log("retype!");
+		}
+	}
+}
+</script>
+
+</body>
+</html>

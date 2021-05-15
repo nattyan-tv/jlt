@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-title" content="初期化">
+<title>初期化</title>
+<script>
+function delet1(){
+	document.cookie = 'start_game=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+	document.cookie = 'water=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+	document.cookie = 'save_water=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+	document.cookie = 'day=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+	document.cookie = 'item=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+	document.cookie = 'grow_item=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+	alert('データを初期化しました。メインページへ戻ります。');
+	location.href = '/grow_flowers/index.html';
+}
+
+function delet2(){
+	delet1();
+	document.cookie = 'clear_game=1; expires=Tue, 31-Dec-2019 15:00:00 GMT;';
+}
+</script>
+</head>
+<body>
+<font size="64"><center>
+下のリンクを押すと、以下のデータが削除されます。</br>
+ゲームのプレイ記録/成長日数/お花の状態/水に関するデータ</br>
+これにより、ゲームを最初からプレイするのと同じになります。</br>
+初期化するのであれば押してください。</br>
+<a href="javascript:delet1()">[ゲームを最初からプレイする]</a></br></br></br>
+</br></br>
+下のリンクを押すと、このゲームに関するデータが全て初期化されます。この操作は取り消せませんので、ご注意ください。</br>
+<a href="javascript:delet2()">[ゲームデータを全て削除する]</a></br></br></br>
+
+<a href="javascript:location.href = '/grow_flowers/index.html'">[BACK]</a>
+</body>
+</html>

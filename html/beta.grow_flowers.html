@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ベータテストのご案内[はなごっち]</title>
+<meta name="viewport" content="width=250">
+<script>
+function gate() {
+	var pass = prompt('PASSWORD:','');
+	if (pass == "pass"){
+		location.href = ('.pass.ok.html');
+	}else{
+		location.href = ('.pass.ng.html');
+	}
+};
+
+function gate2() {
+location.href = ('/grow_flowers/index.html')
+};
+</script>
+<head>
+<body>
+<center>
+<h1>はなごっち</h1>
+<h3>パブリックテストのご案内</h3>
+<hr>
+<h6>本アプリケーションは、AppBASE規約の第2条の5に基づき、
+パブリックテストを行っております。本アプリケーションの公開は、
+2020/5/10からです！早めにプレイを！</h6>
+<hr>
+</center>
+<h3>・プレイ方法</h3>
+<h6>
+下のボタンを押すことで、プレイができます。</br></br>
+<input type="button" value="Play" onclick="gate2();">
+</h6>
+<h4></h4>
+<hr>
+<h4>
+<center>
+<a href="javascript:location.href = ('index.html')">[AppBASE]</a>
+</center>
+</h4>
+</body>
+</html>

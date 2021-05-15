@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WATER</title>
+<meta name="viewport" content="width=350">
+</head>
+<body>
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var mizu = arr['water'];
+var jikan = 60*60*24
+
+if(game == 2 || game != 1 && game != 2){
+location.href = ('flower.html')
+}
+
+document.cookie = 'start_game=2; expires=1-Jun-2030 00:00:00 GMT;';
+document.cookie = 'water=1; max-age=86400;';
+document.cookie = 'save_water=1; max-age=129600;';
+document.cookie = 'day=1; expires=1-Jun-2030 00:00:00 GMT;';
+alert('あなたのお花に水をあげました！\nこれからもあげてくださいね！');
+location.href = ('flower.html');
+</script>
+</body>
+</html>

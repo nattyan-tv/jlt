@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ITEM</title>
+<meta name="viewport" content="width=350">
+
+
+
+</head>
+<body>
+<h1>アイテム</h1>
+<form action="/grow_flowers/item.growTime.html">
+<div id="item"></div>
+</form>
+<div id="item2"></div>
+<h5>花の成長日数に1日プラスします。これによって、少し早くゴールにたどり着けます。</br>
+このアイテムを使用すると、花が水分を全て吸ってしまうため、新たに水を上げる必要があります。</br>
+さらに、セーフタイムもアイテム使用から一時間になります。できるだけ早く水をあげてください。</h5>
+<hr>
+<form action="/grow_flowers/main.html">
+<input type="submit" value="[BACK]" style="width:330px;height:60px;font-size:30px;">
+</form>
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var item = arr['item'];
+var day = arr['day'];
+
+elem = document.getElementById("item");
+elem2 = document.getElementById("item2");
+
+if (item != 1 && day >= 1){
+	elem.innerHTML = '<input type="submit" value="[植物成長剤]" style="width:330px;height:60px;font-size:30px;">';
+	elem2.innerHTML = '<h5>このアイテムはあと1回使えます。</h5>';
+}else if(item == 1){
+	elem.innerHTML = '<input type="submit" value="[植物成長剤]" style="width:330px;height:60px;font-size:30px;" disabled>';
+	elem2.innerHTML = '<h5>このアイテムは利用できません。</h5>';
+}else{
+	elem.innerHTML = '<input type="submit" value="[植物成長剤]" style="width:330px;height:60px;font-size:30px;" disabled>';
+	elem2.innerHTML = '<h5>このアイテムは利用できません。</h5>';
+};
+
+
+// 
+// 
+// Code by Qitta:@mocha_xx
+// 
+
+
+</script>
+</body>
+</html>

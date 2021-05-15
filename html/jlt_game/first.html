@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Loading...</title>
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+
+if(game == 1){
+	location.href = "home.html"
+}else{
+	document.cookie = 'gen=1; expires=Tue, 1-Jun-2999 00:00:00 GMT;';
+	location.href = "gen.html"
+}
+
+</script>
+</head>
+</html>

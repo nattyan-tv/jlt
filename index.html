@@ -19,9 +19,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 if(window.navigator.standalone){
- alert("ホーム画面からの起動です！")
+ document.write("ホーム画面からの起動です！")
 }else{
- alert("ホーム画面に追加してください！")
+ document.write("ホーム画面に追加してください！")
 }
 	
 
@@ -90,9 +90,11 @@ $.getJSON("test.json", (data) => {
 	 <span id="span2"></span></br></br>
 <a href="javascript:location.reload(true)">再読み込み</a></br>
 <h3><a href="javascript:location.replace('help.html')">使い方</a></h3>
-<h3><a href="javascript:location.replace('test.html')">Novel-DEV</a></h3>
+<h3><a href="javascript:location.replace('home.html')">Novel-DEV</a></h3>
 <h3><a href="javascript:location.replace('renpy/index.html')">Ren'py</a></h3>
 <h3><a href="javascript:location.replace('skynovel/web.html')">SKYNovel</a></h3>
+<h3><a href="javascript:location.replace('html/index.html')">AppBASE</a></h3>
+<h3><a href="javascript:location.replace('html/jlt_game/index.html')">JLT game</a></h3>
 <script>
 function clickBtn1(){
 	const xxx = document.test.xxx;

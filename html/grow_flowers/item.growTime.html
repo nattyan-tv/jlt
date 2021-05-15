@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+var arr = getCookieArray();
+var hi = arr['day']
+num = parseInt(hi)
+
+document.cookie = 'water=1; expires=1-Jun-2010 00:00:00 GMT;';
+document.cookie = 'day=' + (num+1) + '; expires=1-Jun-2030 00:00:00 GMT;';
+document.cookie = 'item=1; expires=1-Jun-2030 00:00:00 GMT;';
+document.cookie = 'save_water=1; max-age=3600;';
+alert('植物成長剤を使用しました。\nできるだけ早く水をあげましょう。')
+location.href = ('item.html')
+
+</script>
+</head>
+<body></body>
+</html>

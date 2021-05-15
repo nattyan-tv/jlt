@@ -1,0 +1,89 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-title" content="ERROR">
+<meta name="viewport" content="width=350">
+<title>ERROR</title>
+<script>
+document.write("<center>");
+document.write("<h3>");
+
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var mizu = arr['water'];
+var save = arr['save_water']
+var hi = ['day']
+num = parseInt(hi)
+// 
+// 
+// Code by Qitta:@mocha_xx
+// 
+//
+
+if(num == 7){
+	document.cookie = 'start_game=3; expires=1-Jun-2030 00:00:00 GMT;';
+	location.href = ('end/good_end.html');
+};
+
+if(game == 2){
+	document.write("・毎日水をあげに来てね！")
+}else if(game == 1){
+	document.write("・次に水をあげよう！")
+}else if(game == 3 || game == 4){
+	document.write("・花の状況を確認しよう！")
+}else{
+	document.write("・まずはお花を植えよう！")
+};
+
+
+if(game == 2 && mizu != 1 && save != 1){
+	document.write("</br>おきのどくですが</br>あなたのおはな１りんは</br>しょうめつしました。</br>")
+	document.cookie = 'start_game=4; expires=1-Jun-2030 00:00:00 GMT;';
+	location.href = ('end/bad_end.html');
+};
+
+
+
+
+if(game == 2 && mizu == 1){
+	document.write("</br>ただいまお花は水で潤っています。</br>")
+}else if(game == 2 && mizu != 1){
+	document.write("</br>水がなくなりました！</br>お花に水をあげてください！</br>")
+};
+
+
+
+
+document.write("</h3>");
+document.close();
+
+</script>
+
+<!-- document.write("") -->
+
+</head>
+<body>
+<form action="/grow_flowers/flower.html">
+<input type="submit" value="庭に行く" style="width:330px;height:60px;font-size:30px;">
+</form> 
+<a href="javascript:location.href = 'item.html';">[アイテムの使用]</a></br>
+</br>
+<a href="javascript:location.href = '/grow_flowers/index.html'">[BACK]</a>
+</body>
+</html>

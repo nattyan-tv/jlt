@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FlowerINFO</title>
+<meta name="viewport" content="width=350">
+<script>
+document.write("<center>");
+
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+
+var arr = getCookieArray();
+var game = arr['start_game'];
+var mizu = arr['water'];
+var date = arr['day']
+var save = arr['save_water']
+// 
+// 
+// Code by Qitta:@mocha_xx
+// 
+//
+if(mizu == 1){
+	document.write('・お花は潤っています。')
+}else if(save == 1){
+	document.write('・まもなく、お花が枯れてしまいます！')
+}else if(mizu != 1 && save != 1){
+	document.write('・お花は枯れてしまいました。')
+};
+document.write('</br>');
+document.write('お花に水をあげた回数:' + date + '回');
+</script>
+</head>
+<body>
+<form action="/grow_flowers/flower.html">
+<input type="submit" value="[前の画面に戻る]" style="width:330px;height:60px;font-size:30px;">
+</form>
+</body>
+</html>
